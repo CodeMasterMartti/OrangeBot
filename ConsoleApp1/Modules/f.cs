@@ -24,13 +24,10 @@ public class f : ModuleBase<SocketCommandContext>
         count++;
 
         //Convert count to string type
-        string[] stringcount;
-        stringcount = new string[1];
+        string stringcount = count.ToString();
 
-        //Convert to string array because File.WriteAllLines() takes in string[] not string
-        stringcount[0] = count.ToString();
-
-        File.WriteAllLines("fcount.txt", stringcount);
+        // Write new count to file
+        await File.WriteAllTextAsync("fcount.txt", stringcount);
 
     }
 }
