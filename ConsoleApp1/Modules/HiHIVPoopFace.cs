@@ -9,11 +9,13 @@ public class HiHIVPoopFace : ModuleBase<SocketCommandContext>
 {
 
 
-    [Command("Hello everyone.")]
+    [Command("Hello everyone.")] // First word of command
     public async Task hi()
-    {
+    {   //If martti says Hello everyone, respond with Hello HIVpoopface
         if (Context.User.Username == "HIVpoopface")
             await ReplyAsync($"Hello {Context.User.Username}.");
+
+
         //Do nothing
     }
 }

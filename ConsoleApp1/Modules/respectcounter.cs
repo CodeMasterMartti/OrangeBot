@@ -9,16 +9,18 @@ public class respectcounter : ModuleBase<SocketCommandContext>
 {
     
 
-    [Command("respectcounter")]
+    [Command("respectcounter")] // First word of command
     public async Task theletter()
     {
-        int count = 0;
+        int count = 0; // set count to zero
 
+        //Open fcount.txt
         using (TextReader reader = File.OpenText("fcount.txt"))
         {
+            //Set count to contence of file, convert to type int
             count = int.Parse(reader.ReadLine());
         }
-
+        //Print amount of respects given
         await ReplyAsync($"{count} respects have been paid");
 
        

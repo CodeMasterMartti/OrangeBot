@@ -14,13 +14,13 @@ namespace ConsoleApp1.Modules
 
     public class quote : ModuleBase<SocketCommandContext>
     {
-        Random rand;
+        Random rand; //Create random number gen
 
-        [Command("quote")]
+        [Command("quote")] // First word of command
         public async Task BC9quote()
         {
-            rand = new Random();
-            string[] freshquote;
+            rand = new Random(); // Generate random number
+            string[] freshquote; // Create array of string
             freshquote = new string[]
             {
                     "\"I'm poping off\" - DG06" ,
@@ -50,17 +50,19 @@ namespace ConsoleApp1.Modules
 
 
             };
+
+            //Random event,  1/20 chance of happening
             int ran = rand.Next(20);
             if (ran == 1)
             {
                 await ReplyAsync($"Damm {Context.User.Username} I'd sure love to gobble up that thicc and thight bootie hole of yours.");
-                await Task.Delay(4000);
+                await Task.Delay(4000);  //Wait 4 seconds
                 await ReplyAsync($"Shit");
-                await Task.Delay(3000);
+                await Task.Delay(3000);  //Wait 3 seconds
                 await ReplyAsync($"I didnt mean to say that");
-                await Task.Delay(2500);
+                await Task.Delay(2500);  //Wait 2.5 seconds
             }
-            
+            //print one of the string from array
             await ReplyAsync(freshquote[rand.Next(freshquote.Length)]);
         }
 

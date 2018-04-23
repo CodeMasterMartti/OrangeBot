@@ -8,19 +8,17 @@ using System.Threading.Tasks;
 namespace ConsoleApp1.Modules
 {
 
-
-
-
-
     public class compliment : ModuleBase<SocketCommandContext>
     {
-        Random rand;
+        Random rand; // Random number class
 
-        [Command("compliment")]
+        [Command("compliment")] // First word of command
         public async Task TheThiccestofCompliments()
         {
-            rand = new Random();
+            rand = new Random(); // Generate random number
             string[] freshcompliment;
+
+            //Array of Compliments
             freshcompliment = new string[]
             {
                     "You’re so smart! Why haven’t I thought of that before?" ,
@@ -124,6 +122,8 @@ namespace ConsoleApp1.Modules
                     "You complete me." ,
                     "You are a skilled artist."
             };
+
+            //Random event, 1/20 chance of happening
             int ran = rand.Next(20);
             if (ran == 1)
             {
@@ -135,6 +135,7 @@ namespace ConsoleApp1.Modules
                 await Task.Delay(2500);
             }
 
+            //Print random string from array
             await ReplyAsync(freshcompliment[rand.Next(freshcompliment.Length)]);
         }
       
