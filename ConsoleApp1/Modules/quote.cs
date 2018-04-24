@@ -46,7 +46,11 @@ namespace ConsoleApp1.Modules
                     "\"DOG GET THE FUCK BEHIND MY SHIELD\" - anonymous",
                     "\"Running through hoes, cycling through pre-workout, and swimming in pussy.\" - Martti",
                     "\"Bananas are digital and all other fruit are analog\" - Martti",
-                    "\"\\u1F621\" - Sunny"
+                    "\"\\u1F621\" - Sunny",
+                    "\"Running through hoes, cycling through pre-workout, and swimming in pussy.\" - Martti",
+                    "\"Bananas are digital and all other fruit are analog\" - Martti" ,
+                    "\"I will leave and make a new one, that supports bilingualism and everyone from this server will join and leave this one\" - Martti",
+                    "\"You want to talk commie? go to another server\" - Sunny78"
             };
 
             //Random event,  1/20 chance of happening
