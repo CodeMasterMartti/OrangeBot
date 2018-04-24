@@ -23,12 +23,12 @@ namespace ConsoleApp1.Modules
             string[] freshquote; // Create array of string
             freshquote = new string[]
             {
-                    "\"I'm poping off\" - DG06" ,
-                    "\"Skate fast eat ass\" - OrangeLube" ,
+                    "\"I'm poping off\" - DG06",
+                    "\"Skate fast eat ass\" - OrangeLube",
                     "\"I am a person who isn't bald for sure.  100% certain\" - Enum",
-                    "\"I have a ball over here for you\" - Orange" ,
-                    "\"Can you carry me in my placements dog?\" - Spearslim" ,
-                    "\"You just have to not be a dumbass\" - Enum" ,
+                    "\"I have a ball over here for you\" - Orange",
+                    "\"Can you carry me in my placements dog?\" - Spearslim",
+                    "\"You just have to not be a dumbass\" - Enum",
                     "\"I spent 60 dollars on this game and I'm not allowed to play it\" - Sunny78",
                     "\"Can you sub for our next 20 games\" - Gash",
                     "\"Did someone say peanutbutter\" - Cynosure", 
@@ -48,9 +48,10 @@ namespace ConsoleApp1.Modules
                     "\"Bananas are digital and all other fruit are analog\" - Martti",
                     "\"\\u1F621\" - Sunny",
                     "\"Running through hoes, cycling through pre-workout, and swimming in pussy.\" - Martti",
-                    "\"Bananas are digital and all other fruit are analog\" - Martti" ,
+                    "\"Bananas are digital and all other fruit are analog\" - Martti",
                     "\"I will leave and make a new one, that supports bilingualism and everyone from this server will join and leave this one\" - Martti",
-                    "\"You want to talk commie? go to another server\" - Sunny78"
+                    "\"You want to talk commie? go to another server\" - Sunny78",
+                    "\"I thought mine was big, but then she took off her pants\" - DG06"
             };
 
             //Random event,  1/20 chance of happening
