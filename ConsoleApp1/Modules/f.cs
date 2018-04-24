@@ -12,22 +12,14 @@ public class f : ModuleBase<SocketCommandContext>
     [Command("f")] //First word of command
     public async Task theletterf()
     {
-        int count;
-
-        // Test if existing fcount
-        if (File.Exists("fcount.txt"))
+        int count = 0; // count to zero
+        
+        //Open fcount.txt
+        using (TextReader reader = File.OpenText("fcount.txt"))
         {
-            // Initialize counter to zero if non-existant
-            count = 0;
-            // Create fcount file
-            File.Create("fcount.txt");
+            //Set count equal to contents of file, converted to type int
+           count = int.Parse(reader.ReadLine());
         }
-        else
-        {
-            // Initialize counter to last written value if existant
-            count = int.Parse((await File.ReadAllTextAsync("fcount.txt")).Trim());
-        }
-
         //Incriment count
         count++;
 
