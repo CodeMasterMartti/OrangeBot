@@ -9,15 +9,20 @@ namespace OrangeBot.Modules
     class jail : ModuleBase<SocketCommandContext>
     {
         // Counter for number of times jail has been said
-        int jailCount = 0;
+        //int jailCount = 0;
         // Start DateTime of current jail-train
-        DateTime jailStart = DateTime.MinValue;
+       // DateTime jailStart = DateTime.MinValue;
         // Max TimeSpan between jail-trains, set to 1 minute
-        TimeSpan maxTime = new TimeSpan(0, 1, 0);
+        //TimeSpan maxTime = new TimeSpan(0, 1, 0);
 
         [Command("jail")] // Command Trigger
         public async Task Jail()
         {
+
+            await ReplyAsync("test");
+            /*
+            
+            
             // Get DateTime of current jail call
             DateTime currJail = DateTime.Now;
 
@@ -35,7 +40,7 @@ namespace OrangeBot.Modules
                 if (jailCount++ == 3)
                 {
                     // Call the cops
-                    await ReplyAsync("🚨 JAIL 🚨");
+                    await ReplyAsync("JAIL");
                     // Reset counter
                     jailCount = 0;
                 }
@@ -46,7 +51,7 @@ namespace OrangeBot.Modules
                 jailCount = 1;
                 // Reset time tracking
                 jailStart = currJail;
-            }
+            }*/
         }
     }
 }
