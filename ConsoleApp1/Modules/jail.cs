@@ -10,26 +10,43 @@ namespace OrangeBot.Modules
     {
         // Counter for number of times jail has been said
         int jailCount = 0;
-        // DateTime for last time 'jail' was said
-        DateTime lastJail = DateTime.MinValue;
-        // Max TimeSpan between 'jail's, set to 1 minute
+        // Start DateTime of current jail-train
+        DateTime jailStart = DateTime.MinValue;
+        // Max TimeSpan between jail-trains, set to 1 minute
         TimeSpan maxTime = new TimeSpan(0, 1, 0);
 
         [Command("jail")] // Command Trigger
         public async Task Jail()
         {
-            // Get current DateTime for 'jail' trigger
+            // Get DateTime of current jail call
             DateTime currJail = DateTime.Now;
 
-            // If 'jail' has been said 3 times, 1 minute apart for one another
-            if (jailCount++ == 3 && (currJail - lastJail <= maxTime))
+            // Start time tracking if first jail call
+            if (jailCount == 0)
             {
-                await ReplyAsync(@"\u1F6A8 JAIL \u1F6A8");
-                jailCount = 0;
+                // Set jail-train start
+                jailStart = currJail;
             }
 
-            // Update lastJail
-            lastJail = currJail;
+            // Check if still within max time of jail-train
+            if (currJail - jailStart <= maxTime)
+            {
+                // If 3rd jail call, call cops
+                if (jailCount++ == 3)
+                {
+                    // Call the cops
+                    await ReplyAsync("🚨 JAIL 🚨");
+                    // Reset counter
+                    jailCount = 0;
+                }
+            }
+            else // No longer within time window
+            {
+                // Reset counter to first jail
+                jailCount = 1;
+                // Reset time tracking
+                jailStart = currJail;
+            }
         }
     }
 }
