@@ -18,6 +18,7 @@ namespace ConsoleApp1.Modules
             builder.WithTitle("OrangeBot Help")                 //Set Title
                 .WithDescription("!add_role [role name]\n" +    //Set Description
                                  "!compliment\n" +
+                                 "!insult\n" +
                                  "!remove_role [role name]\n" + 
                                  "!quote\n" + 
                                  "!respectcounter\n" +
@@ -63,6 +64,17 @@ namespace ConsoleApp1.Modules
             builder.AddField("OrangeBot Help: Quote", "Provide a pleasen quote from your local BC9 team")                                                       //Added Field to builder.  Title, Description
                    .WithColor(Color.Orange);                                                                                                                    //set color to orange
             await ReplyAsync("", false , builder.Build());     //Print EmbedBuilder, ReplyAsync takes in string, bool for TTS t/f, EmbedBuillder   
+
+        }
+
+        [Command("insult")] // Second word of command
+        public async Task insult_help()
+        {
+            //Set up Embed Builder
+            EmbedBuilder builder = new EmbedBuilder();
+            builder.AddField("OrangeBot Help: Insult", "OrangeBot drops the thiccest salt on you.")                                                             //Added Field to builder.  Title, Description
+                   .WithColor(Color.Orange);                                                                                                                    //set color to orange
+            await ReplyAsync("", false, builder.Build());     //Print EmbedBuilder, ReplyAsync takes in string, bool for TTS t/f, EmbedBuillder   
 
         }
 
