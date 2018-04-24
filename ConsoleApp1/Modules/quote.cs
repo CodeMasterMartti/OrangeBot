@@ -52,7 +52,7 @@ namespace ConsoleApp1.Modules
                     "\"Bananas are digital and all other fruit are analog\" - Martti",
                     "\"I will leave and make a new one, that supports bilingualism and everyone from this server will join and leave this one\" - Martti",
                     "\"You want to talk commie? go to another server\" - Sunny78",
-                    "\"I thought mine was big, but then she took off her pants\" - DG06"
+                    "\"I thought mine was big, but then she took off her pants\" - DG06",
                     "\"I'm not wearing any pants\" - Yukali",
                     "\"Fight in the courtyard\" - Yukali",
                     "\"Don't sleep on my boi Profit\" - Sequoia",
