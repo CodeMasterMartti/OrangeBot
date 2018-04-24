@@ -65,16 +65,7 @@
 +                    "You look like you're going to spend your life having one epiphany after another, always thinking you've finally figured out what's holding you back, and how you can finally be productive and creative and turn your life around. But nothing will ever change. That cycle of mediocrity isn't due to some obstacle. It's who you are. The thing standing in the way of your dreams is that the person having them is you." ,
 +                    "Your mother was a hamster and your father smelt of elderberries; I fart in your general direction."
 +            };
-+            int ran = rand.Next(20);
-+            if (ran == 1)
-+            {
-+                await ReplyAsync($"Damm {Context.User.Username} I want you to call me Daddy and ride my raging hard robot cock. ");
-+                await Task.Delay(4000);
-+                await ReplyAsync($"Shit");
-+                await Task.Delay(3000);
-+                await ReplyAsync($"I didnt mean to say that");
-+                await Task.Delay(2500);
-+            }
++         
 +
 +            await ReplyAsync(freshinsult[rand.Next(freshinsult.Length)]);
 +        }
