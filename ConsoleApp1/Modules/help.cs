@@ -17,11 +17,14 @@ namespace ConsoleApp1.Modules
             EmbedBuilder builder = new EmbedBuilder();
             builder.WithTitle("OrangeBot Help")                 //Set Title
                 .WithDescription("!add_role [role name]\n" +    //Set Description
+                                 "!cat\n" +
                                  "!compliment\n" +
                                  "!insult\n" +
                                  "!remove_role [role name]\n" + 
                                  "!quote\n" + 
                                  "!respectcounter\n" +
+                                 "!surrealmeme\n" +
+                                 "!dankmeme\n" +
                                  "!help [command]\n")
 
                 .WithColor(Color.Orange);                       //Set color to orange
