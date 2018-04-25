@@ -16,6 +16,7 @@ namespace ConsoleApp1.Modules
             //Create Embed Builder
             EmbedBuilder builder = new EmbedBuilder();
             builder.AddField("🍊OrangeBot Help", "This is the help hot line for help with OrangeBot Commands.  Type !help [command] for more information on certain commands")          //Set Title
+                   .AddField("💸Coins", "!balance, !beg, !bet, !coinstart")
                    .AddField("Role Commands", "!add_role, !remove_role")
                    .AddField("🤔Text Commands ", "!compliment, !insult, !quote, !respectcounter")
                    .AddField("🅱️Memes ", "!cat, !cursed, !dankmeme, !meme, !surrealmeme")
@@ -149,6 +150,50 @@ namespace ConsoleApp1.Modules
             //Set up Embed Builder
             EmbedBuilder builder = new EmbedBuilder();
             builder.AddField("OrangeBot Help: Cursed", "cursed_meme")                                                                                           //Added Field to builder.  Title, Description
+                   .WithColor(Color.Orange);                                                                                                                    //set color to orange
+            await ReplyAsync("", false, builder.Build());     //Print EmbedBuilder, ReplyAsync takes in string, bool for TTS t/f, EmbedBuillder   
+
+        }
+
+        [Command("balance")] // Second word of command
+        public async Task balance_help()
+        {
+            //Set up Embed Builder
+            EmbedBuilder builder = new EmbedBuilder();
+            builder.AddField("OrangeBot Help: Balance", "Displays your current balance")                                                                                           //Added Field to builder.  Title, Description
+                   .WithColor(Color.Orange);                                                                                                                    //set color to orange
+            await ReplyAsync("", false, builder.Build());     //Print EmbedBuilder, ReplyAsync takes in string, bool for TTS t/f, EmbedBuillder   
+
+        }
+
+        [Command("beg")] // Second word of command
+        public async Task beg_help()
+        {
+            //Set up Embed Builder
+            EmbedBuilder builder = new EmbedBuilder();
+            builder.AddField("OrangeBot Help: Beg", "You can beg for coins if you runout.  Will be adding a anti spam feature soon.")                                                                                           //Added Field to builder.  Title, Description
+                   .WithColor(Color.Orange);                                                                                                                    //set color to orange
+            await ReplyAsync("", false, builder.Build());     //Print EmbedBuilder, ReplyAsync takes in string, bool for TTS t/f, EmbedBuillder   
+
+        }
+
+        [Command("bet")] // Second word of command
+        public async Task bet_help()
+        {
+            //Set up Embed Builder
+            EmbedBuilder builder = new EmbedBuilder();
+            builder.AddField("OrangeBot Help: Bet", "Lets you bet a certain amount of coins.")                                                                                           //Added Field to builder.  Title, Description
+                   .WithColor(Color.Orange);                                                                                                                    //set color to orange
+            await ReplyAsync("", false, builder.Build());     //Print EmbedBuilder, ReplyAsync takes in string, bool for TTS t/f, EmbedBuillder   
+
+        }
+
+        [Command("coinstart")] // Second word of command
+        public async Task coinstart_help()
+        {
+            //Set up Embed Builder
+            EmbedBuilder builder = new EmbedBuilder();
+            builder.AddField("OrangeBot Help: Coin Start", "Lets you begin your Orange Bank Acount.  Orange bot will grant you 1000 coins to start.")                                                                                           //Added Field to builder.  Title, Description
                    .WithColor(Color.Orange);                                                                                                                    //set color to orange
             await ReplyAsync("", false, builder.Build());     //Print EmbedBuilder, ReplyAsync takes in string, bool for TTS t/f, EmbedBuillder   
 
