@@ -37,6 +37,7 @@ namespace ConsoleApp1.Modules
                 EmbedBuilder builder = new EmbedBuilder();
                 builder.WithTitle(Path.GetFileNameWithoutExtension(files[i]))
                        .WithImageUrl(message)
+                       .WithFooter($"Requested by: {Context.User.Username}")
                        .WithColor(Color.Orange);
 
 
