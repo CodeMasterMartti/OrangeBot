@@ -42,7 +42,7 @@ namespace ConsoleApp1.Modules
 
 
                     //51% to win
-                    if (ran > 49)                 
+                    if (ran > 45)                 
                     {
 
                         //New balance amount after winning the bet picks random number between 100% and 150% of bet amount
@@ -59,7 +59,7 @@ namespace ConsoleApp1.Modules
 
                         //Print out info on bet
                         EmbedBuilder builder = new EmbedBuilder();
-                        builder.AddField($"Aw shucs, you won {amountwon}", $"New balance is {balance}")
+                        builder.AddField($"Aw shucks, you won {amountwon}", $"New balance is {balance}")
                                .WithColor(Color.Orange);
                         await ReplyAsync("", false, builder.Build());
                     }
