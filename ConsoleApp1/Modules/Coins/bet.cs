@@ -32,8 +32,6 @@ namespace ConsoleApp1.Modules
                 bool isNumerical = int.TryParse(amount, out amount_int);
 
                 //Check if amount_int is vaild number ( number != 0, number  < 0)
-                Console.WriteLine(amount_int);
-
                 if (amount_int == 0)        await ReplyAsync("You can't bet that many coin dummie");
                 if (amount_int > balance)   await ReplyAsync("You don't even have that many coins.");
                 if (amount_int > 0 && amount_int <= balance)
@@ -43,12 +41,15 @@ namespace ConsoleApp1.Modules
                     int ran = rand.Next(0, 100);
 
 
-
+                    //51% to win
                     if (ran > 49)                 
                     {
-                        
-                        //New balance amount after winning the bet
-                        balance = 2 * amount_int + balance;
+
+                        //New balance amount after winning the bet picks random number between 100% and 150% of bet amount
+
+                        int amountwon = amount_int / 2 + rand.Next((amount_int / 2) + 1, amount_int + 2);
+
+                        balance = amountwon + balance;
                         
                         //Convert to string
                         string balance_string = balance.ToString();
@@ -58,16 +59,18 @@ namespace ConsoleApp1.Modules
 
                         //Print out info on bet
                         EmbedBuilder builder = new EmbedBuilder();
-                        builder.AddField($"You won!", $"New balance is {balance}")
+                        builder.AddField($"Aw shucs, you won {amountwon}", $"New balance is {balance}")
                                .WithColor(Color.Orange);
                         await ReplyAsync("", false, builder.Build());
                     }
 
                     else
                     {
+                        //Amount lost, chose the loss amount to be between 75% of and 100$ of bet
+                        int amountlost = 3 * (amount_int / 4) + rand.Next(1, (amount_int / 4) + 1);
+
                         
-                        //New balance amount after losing the bet
-                        balance = balance - 2 * amount_int;
+                        balance = balance - amountlost;
 
                         //Bank acount cant go below 0
                         if (balance < 0) balance = 0;
@@ -80,7 +83,7 @@ namespace ConsoleApp1.Modules
 
                         //Printing info
                         EmbedBuilder builder = new EmbedBuilder();
-                        builder.AddField($"You lost!", $"New balance is {balance}")
+                        builder.AddField($"Heck yeah, you lost {amountlost} coins", $"New balance is {balance}")
                                .WithColor(Color.Orange);
                         await ReplyAsync("", false, builder.Build());
                     }
