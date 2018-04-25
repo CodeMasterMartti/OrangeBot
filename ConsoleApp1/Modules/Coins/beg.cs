@@ -27,26 +27,29 @@ namespace ConsoleApp1.Modules
             {   //Read current user balance
                 int balance = int.Parse((await File.ReadAllTextAsync($"{path}{Context.User.Username}.txt")).Trim());
 
-                //Give user between 1 and 10 coins
-                int ran = rand.Next(1, 10);
-                balance = balance + ran;
+                if (balance > 100) await ReplyAsync("You can only beg if you have less than 100 coins");
+                else
+                {
+                    //Give user between 1 and 10 coins
+                    int ran = rand.Next(1, 10);
+                    balance = balance + ran;
 
-                //Convert blance to string
-                string balance_string = balance.ToString();
+                    //Convert blance to string
+                    string balance_string = balance.ToString();
 
-                //Input new balance
-                await File.WriteAllTextAsync($"{path}{Context.User.Username}.txt", balance_string);
+                    //Input new balance
+                    await File.WriteAllTextAsync($"{path}{Context.User.Username}.txt", balance_string);
 
-                //Print new balance
-                await ReplyAsync($"Fine heres some coins");
+                    //Print new balance
+                    await ReplyAsync($"Fine heres some coins");
 
-                //Build Embed Text
-                EmbedBuilder builder = new EmbedBuilder();
+                    //Build Embed Text
+                    EmbedBuilder builder = new EmbedBuilder();
                     builder.AddField($"You got {ran} coins", $"You now have {balance}")
                           .WithColor(Color.Orange);
-                //Print to user
-                await ReplyAsync("", false, builder.Build());
-
+                    //Print to user
+                    await ReplyAsync("", false, builder.Build());
+                }
             }
         }
     }
