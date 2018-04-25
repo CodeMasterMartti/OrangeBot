@@ -15,10 +15,10 @@ namespace ConsoleApp1.Modules
         {
             //Create Embed Builder
             EmbedBuilder builder = new EmbedBuilder();
-            builder.AddField("OrangeBot Help 🍊", "This is the help hot line for help with OrangeBot Commands.  Type !help [command] for more information on certain commands")          //Set Title
+            builder.AddField("🍊OrangeBot Help", "This is the help hot line for help with OrangeBot Commands.  Type !help [command] for more information on certain commands")          //Set Title
                    .AddField("Role Commands", "!add_role, !remove_role")
-                   .AddField("Text Commands 🤔", "!compliment, !insult, !quote, !respectcounter")
-                   .AddField("Memes 🅱️", "!cat, !dankmeme, !meme, !surrealmeme")
+                   .AddField("🤔Text Commands ", "!compliment, !insult, !quote, !respectcounter")
+                   .AddField("🅱️Memes ", "!cat, !dankmeme, !meme, !surrealmeme")
                    .WithColor(Color.Orange);                                                                                                                                            //Set color to orange
 
 

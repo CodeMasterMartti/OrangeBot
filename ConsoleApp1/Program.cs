@@ -48,6 +48,9 @@ namespace OrangeBot
             await _client.StartAsync();
             int a = 0;
 
+
+
+
             //Have bot cycle between "playing with my dad" and "!help"
             while (a == 0) {
                 await Task.Delay(10000);
@@ -76,6 +79,7 @@ namespace OrangeBot
 
 
         }
+
 
 
         //Trigger
