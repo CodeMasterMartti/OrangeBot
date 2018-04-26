@@ -16,7 +16,7 @@ namespace ConsoleApp1.Modules
             //Create Embed Builder
             EmbedBuilder builder = new EmbedBuilder();
             builder.AddField("🍊OrangeBot Help", "This is the help hot line for help with OrangeBot Commands.  Type !help [command] for more information on certain commands")          //Set Title
-                   .AddField("💸Coins", "!balance, !beg, !bet, !coinstart, !leaderboard")
+                   .AddField("💸Coins", "!balance, !beg, !bet, !coinstart, !give, !leaderboard")
                    .AddField("Role Commands", "!add_role, !remove_role")
                    .AddField("🤔Text Commands ", "!compliment, !insult, !quote, !respectcounter")
                    .AddField("🅱️Memes ", "!cat, !cursed, !dankmeme, !meme, !surrealmeme")
@@ -33,7 +33,8 @@ namespace ConsoleApp1.Modules
         {
             //Create Embed Builder
             EmbedBuilder builder = new EmbedBuilder();
-            builder.AddField("OrangeBot Help: Add Role", "The add role command adds certain roles to the user. Currently the avaiable role to add are:")        //First line.  Title, Description//First line.  Title, Description
+            builder.AddField("OrangeBot Help: Add Role", "The add role command adds certain roles to the user.\n**!add_role [rolename]**\nCurrently the avaiable role to add are:")        //First line.  Title, Description//First line.  Title, Description
+                   
                    .AddInlineField("Friends", "*Gives access to most of the server*")                                                                           //Create and Inline Field.  Title, Decription
                    .AddInlineField("Sub", "*Subs for the team, gives access to #subs*")                                                                         //Create and Inline Field.  Title, Decription
                    .AddInlineField("NSFW", "*Gives access to the NSFW channel*")                                                                                //Create and Inline Field.  Title, Decription
@@ -46,7 +47,7 @@ namespace ConsoleApp1.Modules
         public async Task remove_role_help()
         {
             EmbedBuilder builder = new EmbedBuilder();
-            builder.AddField("OrangeBot Help: Remove Role", "The remove role command removes certain roles from the user.  The avalible roles to remove are:")  //First line.  Title, Description
+            builder.AddField("OrangeBot Help: Remove Role", "The remove role command removes certain roles to the user.\n**!remove_role [rolename]**\nCurrently the avaiable roles to remove are:")  //First line.  Title, Description
                    .AddInlineField("Sub", "*Subs for the team, gives access to #subs*")                                                                         //Create and Inline Field.  Title, Decription
                    .AddInlineField("NSFW", "*Gives access to the NSFW channel*")                                                                                //Create and Inline Field.  Title, Decription
                    .AddInlineField("Friends", "*Removes access to server, don't remove this*")                                                                  //Create and Inline Field.  Title, Decription
@@ -205,6 +206,18 @@ namespace ConsoleApp1.Modules
             //Set up Embed Builder
             EmbedBuilder builder = new EmbedBuilder();
             builder.AddField("OrangeBot Help: Leaderboard", "Displays the top three global coin users.")                                                                                           //Added Field to builder.  Title, Description
+                   .WithColor(Color.Orange);                                                                                                                    //set color to orange
+            await ReplyAsync("", false, builder.Build());     //Print EmbedBuilder, ReplyAsync takes in string, bool for TTS t/f, EmbedBuillder   
+
+        }
+
+        [Command("give")] // Second word of command
+        public async Task give_help()
+        {
+            //Set up Embed Builder
+            EmbedBuilder builder = new EmbedBuilder();
+            builder.AddField("OrangeBot Help: Give", "!give [username] [amount]\n" +
+                                                     "The give command let to give your coins to other people")                                                 //Added Field to builder.  Title, Description
                    .WithColor(Color.Orange);                                                                                                                    //set color to orange
             await ReplyAsync("", false, builder.Build());     //Print EmbedBuilder, ReplyAsync takes in string, bool for TTS t/f, EmbedBuillder   
 
