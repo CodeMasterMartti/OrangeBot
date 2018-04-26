@@ -18,7 +18,7 @@ namespace ConsoleApp1.Modules
             string path = "C:\\Users\\Aidan Johnsotn\\Desktop\\coins\\";
 
             //Get array of all file in folder
-           var files = Directory.GetFiles($"{path}");
+           var files = Directory.GetFiles($"{path}", "*.txt");
 
 
             //Set up sorted list, key = content of file, value = adress of file
