@@ -1,6 +1,7 @@
 ﻿using Discord;
 using Discord.Commands;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
@@ -17,35 +18,30 @@ namespace ConsoleApp1.Modules
             string path = "C:\\Users\\Aidan Johnsotn\\Desktop\\coins\\";
 
             //Get array of all file in folder
-            var files = Directory.GetFiles($"{path}");
+           var files = Directory.GetFiles($"{path}");
 
-            //Bubble sort array depending on value inside files
 
-            string temp = "";
+            //Set up sorted list, key = content of file, value = adress of file
 
+            SortedList <int, string> list = new SortedList<int, string>();
             for (int i = 0; i < files.Length; i++)
             {
-                for (int j = 0; j < files.Length - 1; j++)
-                {
-                    if (int.Parse(File.ReadAllText(files[i])) > int.Parse(File.ReadAllText(files[j])))
-                    {
-                        temp = files[j + 1];
-                        files[j + 1] = files[j];
-                        files[j] = temp;
-                    }
-                }
+                list.Add(int.Parse(File.ReadAllText(files[i])), files[i]);
             }
-
-
+           
+            //Set up Embed text
             EmbedBuilder builder = new EmbedBuilder();
-            builder.AddField("Global Leaderboard", "List top user coin users")
-                   .AddField("🥇", $"{Path.GetFileNameWithoutExtension(files[files.Length])}: {int.Parse(File.ReadAllText(files[files.Length]))}")      //First
-                   .AddField("🥈", $"{Path.GetFileNameWithoutExtension(files[files.Length-1])}: {int.Parse(File.ReadAllText(files[files.Length-1]))}")      //Second
-                   .AddField("🥉", $"{Path.GetFileNameWithoutExtension(files[files.Length-2])}: {int.Parse(File.ReadAllText(files[files.Length-2]))}")
+            builder.WithTitle("Gobal Leaderboard")
+                   .WithDescription($"🥇 {list.Keys[files.Length - 1]} - {Path.GetFileNameWithoutExtension(list.Values[files.Length - 1])} \n" +     //First
+                                    $"🥈 {list.Keys[files.Length - 2]} - {Path.GetFileNameWithoutExtension(list.Values[files.Length - 2])} \n" +     //Second  
+                                    $"🥉 {list.Keys[files.Length - 3]} - {Path.GetFileNameWithoutExtension(list.Values[files.Length - 3])} \n")      //Third
                    .WithColor(Color.Orange);
             await ReplyAsync("", false, builder.Build());
-
+           
 
         }
     }
 }
+
+
+
